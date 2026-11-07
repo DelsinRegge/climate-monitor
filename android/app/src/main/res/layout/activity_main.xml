@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Server address (Raspberry Pi)"
+            android:textSize="14sp" />
+
+        <!-- 10.0.2.2 is the address of your computer when the app runs in the Android Studio emulator.
+             On a real phone enter the IP address of the Raspberry Pi, e.g. http://192.168.1.50:8000 -->
+        <EditText
+            android:id="@+id/etServer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textUri"
+            android:text="http://10.0.2.2:8000" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Temperature"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-- °C"
+            android:textSize="48sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Humidity"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvHumidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-- %"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvAlert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="No data"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDevice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Device: --"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnOn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_weight="1"
+                android:text="Turn on" />
+
+            <Button
+                android:id="@+id/btnOff"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_weight="1"
+                android:text="Turn off" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Temperature threshold, °C"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etThreshold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:inputType="numberDecimal"
+                android:text="28" />
+
+            <Button
+                android:id="@+id/btnSetThreshold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Set" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Refresh now" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Waiting for data..."
+            android:textSize="12sp" />
+    </LinearLayout>
+</ScrollView>
